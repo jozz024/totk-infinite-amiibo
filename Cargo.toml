@@ -1,0 +1,23 @@
+[package]
+name = "totk-test"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[package.metadata.skyline]
+titleid = "0100F2C0115B6000" # The Legend of Zelda: Tears of the Kingdom
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+skyline = "0.2.0"
+nnsdk = {git = "https://github.com/ultimate-research/nnsdk-rs"}
+rand = { git = "https://github.com/skyline-rs/rand" }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
